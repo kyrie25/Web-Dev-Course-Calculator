@@ -80,6 +80,7 @@ function percent() {
 	const val = Decimal(display.value);
 	if (isNaN(val)) return;
 	display.value = val.div(100).toString();
+	history.value = `${val}%`;
 	waitingForOperand = true;
 }
 
@@ -87,6 +88,7 @@ function square() {
 	const val = Decimal(display.value);
 	if (isNaN(val)) return;
 	display.value = val.times(val).toString();
+	history.value = `${val}²`;
 	waitingForOperand = true;
 }
 
@@ -97,6 +99,7 @@ function squareRoot() {
 		return;
 	}
 	display.value = val.sqrt().toString();
+	history.value = `√${val}`;
 	waitingForOperand = true;
 }
 
@@ -107,6 +110,7 @@ function reciprocal() {
 		return;
 	}
 	display.value = Decimal(1).div(val).toString();
+	history.value = `1/(${val})`;
 	waitingForOperand = true;
 }
 
@@ -152,7 +156,7 @@ function equals() {
 	if (operator && operand != null) {
 		const result = calculate(operand, inputValue, operator);
 		display.value = String(result);
-		history.value += ` ${inputValue.toString()} =`;
+		history.value += ` ${inputValue} =`;
 		operator = null;
 		operand = null;
 		waitingForOperand = true;
