@@ -58,8 +58,8 @@ A modern web-based calculator that replicates the Basic Mode functionality of th
 1. **Clone the repository**
 
    ```bash
-   git clone <your-repo-url>
-   cd Calculator
+   git clone https://github.com/kyrie25/Web-Dev-Course-Calculator.git
+   cd Web-Dev-Course-Calculator
    ```
 
 2. **Install dependencies**
