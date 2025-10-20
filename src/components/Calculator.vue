@@ -152,7 +152,7 @@ function equals() {
 	if (operator && operand != null) {
 		const result = calculate(operand, inputValue, operator);
 		display.value = String(result);
-		history.value = "";
+		history.value += ` ${inputValue.toString()} =`;
 		operator = null;
 		operand = null;
 		waitingForOperand = true;
