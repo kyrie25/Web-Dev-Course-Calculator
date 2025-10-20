@@ -28,7 +28,7 @@ onUnmounted(() => {
 
 let operator = null;
 let operand = null;
-let memory = 0;
+let memory = Decimal(0);
 
 function inputDigit(d) {
 	if (waitingForOperand) {
@@ -77,31 +77,31 @@ function toggleSign() {
 }
 
 function percent() {
-	const val = parseFloat(display.value);
+	const val = Decimal(display.value);
 	if (isNaN(val)) return;
-	display.value = Decimal(val).div(100).toString();
+	display.value = val.div(100).toString();
 	waitingForOperand = true;
 }
 
 function square() {
-	const val = parseFloat(display.value);
+	const val = Decimal(display.value);
 	if (isNaN(val)) return;
-	display.value = Decimal(val).times(Decimal(val)).toString();
+	display.value = val.times(val).toString();
 	waitingForOperand = true;
 }
 
 function squareRoot() {
-	const val = parseFloat(display.value);
+	const val = Decimal(display.value);
 	if (isNaN(val) || val < 0) {
 		display.value = "Error";
 		return;
 	}
-	display.value = Decimal(val).sqrt().toString();
+	display.value = val.sqrt().toString();
 	waitingForOperand = true;
 }
 
 function reciprocal() {
-	const val = parseFloat(display.value);
+	const val = Decimal(display.value);
 	if (isNaN(val) || val === 0) {
 		display.value = "Error";
 		return;
@@ -111,7 +111,7 @@ function reciprocal() {
 }
 
 function performOperation(nextOperator) {
-	const inputValue = parseFloat(display.value);
+	const inputValue = Decimal(display.value);
 	if (isNaN(inputValue)) return;
 
 	if (operand == null) {
@@ -146,7 +146,7 @@ function calculate(a, b, op) {
 }
 
 function equals() {
-	const inputValue = parseFloat(display.value);
+	const inputValue = Decimal(display.value);
 	if (isNaN(inputValue)) return;
 
 	if (operator && operand != null) {
@@ -165,22 +165,22 @@ function memoryClear() {
 }
 
 function memoryRecall() {
-	display.value = String(memory);
+	display.value = Decimal(memory).toString();
 	waitingForOperand = true;
 }
 
 function memoryAdd() {
-	const val = parseFloat(display.value);
-	if (!isNaN(val)) memory += val;
+	const val = Decimal(display.value);
+	if (!isNaN(val)) memory = Decimal(memory).plus(val).toNumber();
 }
 
 function memorySubtract() {
-	const val = parseFloat(display.value);
-	if (!isNaN(val)) memory -= val;
+	const val = Decimal(display.value);
+	if (!isNaN(val)) memory = Decimal(memory).minus(val).toNumber();
 }
 
 function memoryStore() {
-	const val = parseFloat(display.value);
+	const val = Decimal(display.value);
 	if (!isNaN(val)) memory = val;
 }
 

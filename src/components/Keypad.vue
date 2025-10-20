@@ -7,14 +7,15 @@ const props = defineProps({
 	pressedKey: String,
 });
 
-const keys = [
-	[
-		CALCULATOR_KEYS.MEMORY_CLEAR,
-		CALCULATOR_KEYS.MEMORY_RECALL,
-		CALCULATOR_KEYS.MEMORY_ADD,
-		CALCULATOR_KEYS.MEMORY_SUBTRACT,
-		CALCULATOR_KEYS.MEMORY_STORE,
-	],
+const memoryKeys = [
+	CALCULATOR_KEYS.MEMORY_CLEAR,
+	CALCULATOR_KEYS.MEMORY_RECALL,
+	CALCULATOR_KEYS.MEMORY_ADD,
+	CALCULATOR_KEYS.MEMORY_SUBTRACT,
+	CALCULATOR_KEYS.MEMORY_STORE,
+];
+
+const gridKeys = [
 	[CALCULATOR_KEYS.PERCENT, CALCULATOR_KEYS.CLEAR_ENTRY, CALCULATOR_KEYS.CLEAR_ALL, CALCULATOR_KEYS.BACKSPACE],
 	[CALCULATOR_KEYS.RECIPROCAL, CALCULATOR_KEYS.SQUARE, CALCULATOR_KEYS.SQUARE_ROOT, CALCULATOR_KEYS.DIVIDE],
 	[CALCULATOR_KEYS.SEVEN, CALCULATOR_KEYS.EIGHT, CALCULATOR_KEYS.NINE, CALCULATOR_KEYS.MULTIPLY],
@@ -44,9 +45,9 @@ function getButtonClass(key) {
 	<div class="keypad-container" :class="{ dark: props.isDark }">
 		<div class="memory-row">
 			<button
-				v-for="key in keys[0]"
+				v-for="key in memoryKeys"
 				:key="key"
-				:class="getButtonClass(key, 0, 0)"
+				:class="getButtonClass(key)"
 				@click="onClick(key)"
 				:disabled="key === CALCULATOR_KEYS.MEMORY_DROPDOWN"
 			>
@@ -55,8 +56,8 @@ function getButtonClass(key) {
 		</div>
 
 		<div class="calc-grid">
-			<template v-for="(keyRow, row) in keys" :key="row">
-				<button v-if="row > 0" v-for="key in keyRow" :key="key" :class="getButtonClass(key)" @click="onClick(key)">
+			<template v-for="(keyRow, row) in gridKeys" :key="row">
+				<button v-for="key in keyRow" :key="key" :class="getButtonClass(key)" @click="onClick(key)">
 					{{ key }}
 				</button>
 			</template>
