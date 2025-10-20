@@ -36,7 +36,7 @@ A modern web-based calculator that replicates the Basic Mode functionality of th
   - CE (Clear Entry)
   - ⌫ (Backspace)
 - **Decimal Point Support**
-- **Keyboard Support** (planned)
+- **Keyboard Support**
 
 ## Technologies Used
 
