@@ -1,3 +1,4 @@
+<!-- Generated using Github Copilot -->
 <template>
 	<div class="help-container">
 		<button @click="toggleHelp" class="help-button" :class="{ dark: isDark }">
@@ -51,7 +52,7 @@
 
 <script setup>
 import { ref } from "vue";
-import { CALCULATOR_KEYS, KEYBOARD_MAPPINGS } from "../constants/keys.js";
+import { CALCULATOR_KEYS } from "../constants/keys.js";
 
 defineProps({
 	isDark: Boolean,
@@ -115,7 +116,7 @@ function toggleHelp() {
 	border-radius: 8px;
 	box-shadow: 0 8px 16px rgba(0, 0, 0, 0.1);
 	z-index: 1000;
-	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", sans-serif;
+	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .help-popup.dark {

@@ -93,7 +93,7 @@ function getButtonClass(key) {
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", sans-serif;
+	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, sans-serif;
 	font-size: 14px;
 	font-weight: 400;
 	cursor: pointer;

@@ -19,7 +19,7 @@ import Calculator from "./components/Calculator.vue";
 	padding: 20px;
 	background: #f3f3f3;
 	transition: all 0.3s ease;
-	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", "Helvetica Neue", sans-serif;
+	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, "Helvetica Neue", sans-serif;
 }
 
 .dark .app-container {
@@ -54,7 +54,7 @@ import Calculator from "./components/Calculator.vue";
 	font-weight: 600;
 	color: #000;
 	margin: 0;
-	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", sans-serif;
+	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, sans-serif;
 }
 
 .dark .calc-title {

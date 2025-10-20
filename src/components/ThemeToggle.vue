@@ -1,3 +1,5 @@
+<!-- Generated using Github Copilot -->
+
 <template>
 	<button @click="$emit('toggle')" class="theme-toggle" :class="{ dark: isDark }">
 		<svg

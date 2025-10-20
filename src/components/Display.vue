@@ -31,7 +31,7 @@ const value = toRef(props, "value");
 	font-size: 14px;
 	color: rgba(0, 0, 0, 0.6);
 	margin-bottom: 8px;
-	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", sans-serif;
+	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, sans-serif;
 	font-weight: 400;
 }
 
@@ -44,7 +44,7 @@ const value = toRef(props, "value");
 	font-weight: 600;
 	line-height: 1;
 	color: #000000;
-	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", sans-serif;
+	font-family: "Segoe UI", "Segoe UI Web", "Segoe UI Symbol", -apple-system, BlinkMacSystemFont, sans-serif;
 	word-break: break-all;
 	max-width: 100%;
 	overflow: hidden;
