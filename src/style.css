@@ -1,0 +1,53 @@
+@import "tailwindcss";
+
+* {
+	box-sizing: border-box;
+}
+
+html,
+body,
+#app {
+	height: 100%;
+	margin: 0;
+	padding: 0;
+}
+
+body {
+	font-family: "Segoe UI", system-ui, -apple-system, sans-serif;
+	-webkit-font-smoothing: antialiased;
+	-moz-osx-font-smoothing: grayscale;
+	background: #f0f0f0;
+	transition: all 0.3s ease;
+}
+
+.dark {
+	color-scheme: dark;
+}
+
+.dark body {
+	background: #1a1a1a;
+}
+
+/* Remove focus outline for calculator buttons */
+button:focus,
+.key:focus {
+	outline: none;
+}
+
+/* Scrollbar styling for dark mode */
+.dark ::-webkit-scrollbar {
+	width: 8px;
+}
+
+.dark ::-webkit-scrollbar-track {
+	background: rgba(255, 255, 255, 0.1);
+}
+
+.dark ::-webkit-scrollbar-thumb {
+	background: rgba(255, 255, 255, 0.3);
+	border-radius: 4px;
+}
+
+.dark ::-webkit-scrollbar-thumb:hover {
+	background: rgba(255, 255, 255, 0.5);
+}
